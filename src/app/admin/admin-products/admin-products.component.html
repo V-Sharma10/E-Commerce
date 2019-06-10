@@ -1,0 +1,82 @@
+<p>
+<a class="newProd" [routerLink]="['/admin/products/new']" class="btn btn-primary">New Product</a>
+</p>
+<br>
+<!-- search bar implementation starts -->
+<div>
+  <input #query (keyup)="filter(query.value)" class="form-control" type="text" placeholder="Search for Products and their Prices Here..."><br>
+
+  <div *ngIf="query.value" class="alert alert-success">
+    <p>Search Results:</p>
+     <div >
+
+       <table class="table container">
+         <thead>
+           <th>Title</th>
+           <th>Price</th>
+           <!-- <th>Key</th> -->
+         </thead>
+         <tbody>
+       <tr *ngFor="let i of filteredProducts">
+
+       <td>{{i.title}}</td>
+       <td>₹{{i.price}}</td>
+        <!-- <td>{{i}}</td> -->
+       </tr>
+       </tbody>
+       </table>
+     </div>
+  </div>
+</div>
+<!-- search bar implementation ends -->
+
+
+
+
+
+
+<pre style="font-size: 18px;">
+        Total items: {{list$.length}}
+</pre>
+<table class="table">
+<thead>
+  <tr>
+    <th>Title</th>
+    <th>Category</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor= "let i of list$ | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+    <td>{{ i.val().title }}</td>
+    <td>{{i.val().category}}</td>
+    <td>₹{{ i.val().price }}</td>
+    <td>
+      <a [routerLink]="['/admin/products/',i.key]" >Edit </a>
+    </td>
+    <td>
+      <button (click)="delete(i.key)" style="border: none; background:none;"><i  class="fa fa-trash"
+          style="font-size:26px;color:red;" aria-hidden="true"></i></button>
+    </td>
+
+
+<!-- <td>
+<div>
+  <p *ngFor="let i of list$">
+    {{i.key}}
+    {{i.val().title}}
+  </p>
+</div>
+</td> -->
+</tr>
+
+</tbody>
+<ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="list$.length"></ngb-pagination>
+<hr>
+
+<pre>
+  Current Page: {{page}}
+</pre>
+</table>

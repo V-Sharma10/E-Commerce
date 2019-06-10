@@ -1,0 +1,150 @@
+<div style="display: flex;">
+
+<div style="float:left;width: 85%;">
+  <h2 class="card-header" id="fruits" style="background: #9f9f9375;">Fruits</h2>
+
+<br>
+<div class="row container">
+<div *ngFor="let i of items$">
+
+
+
+    <div  *ngIf="i.val().category === 'Fruits'" class="card" style="width:270px;;padding:15px;margin: 15px;text-align: center; ">
+      <img src={{i.val().imageUrl}} height="220px"  class="card-img-top" >
+      <div class="card-body">
+        <p class="card-title" style="font-size: 20px;"><strong>{{i.val().title}}</strong></p>
+        <p class="card-text"><span>₹</span>{{i.val().price}}
+        </p>
+
+        <button style="width: 100%" class="btn btn-outline-primary">Add to Cart</button>
+
+      </div>
+    </div>
+
+    </div>
+</div>
+    <hr id="bread" style="border-bottom: 2px solid black">
+
+<br>
+
+  <h2 class="card-header" style="background: #9f9f9375;">Bread</h2>
+
+  <br>
+  <div class="row container">
+    <div *ngFor="let i of items$">
+
+
+
+      <div *ngIf="i.val().category === 'Bread'" class="card"
+        style="width:270px;;padding:15px;margin: 10px;text-align: center;">
+        <img src={{i.val().imageUrl}} height="220px" class="card-img-top">
+        <div class="card-body">
+          <p class="card-title" style="font-size: 20px;"><strong>{{i.val().title}}</strong></p>
+          <p class="card-text"><span>₹</span>{{i.val().price}}
+          </p>
+
+          <button style="width: 100%" class="btn btn-outline-primary">Add to Cart</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+<hr id="dairy" style="border-bottom: 2px solid black"><br>
+
+    <h2 class="card-header"  style="background: #9f9f9375;">Diary</h2>
+
+    <br>
+    <div class="row container">
+      <div *ngFor="let i of items$">
+
+
+
+        <div *ngIf="i.val().category === 'Dairy'" class="card"
+          style="width:270px;;padding:15px;margin: 10px;text-align: center; ">
+          <img src={{i.val().imageUrl}} height="230px" class="card-img-top">
+          <div class="card-body">
+            <p class="card-title" style="font-size: 20px;"><strong>{{i.val().title}}</strong></p>
+            <p class="card-text"><span>₹</span>{{i.val().price}}
+            </p>
+
+            <button style="width: 100%" class="btn btn-outline-primary">Add to Cart</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+<hr id="season" style="border-bottom: 2px solid black"><br>
+
+<h2 class="card-header"  style="background: #9f9f9375;">Seasonings & Spices</h2>
+
+<br>
+<div class="row container">
+  <div *ngFor="let i of items$">
+
+
+
+    <div *ngIf="i.val().category === 'Seasonings and Spices'" class="card"
+      style="width:270px;;padding:15px;margin: 10px;text-align: center; ">
+      <img src={{i.val().imageUrl}} height="230px" class="card-img-top">
+      <div class="card-body">
+        <p class="card-title" style="font-size: 20px;"><strong>{{i.val().title}}</strong></p>
+        <p class="card-text"><span>₹</span>{{i.val().price}}
+        </p>
+
+        <button style="width: 100%" class="btn btn-outline-primary">Add to Cart</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr id="veges" style="border-bottom: 2px solid black"><br>
+
+<h2 class="card-header"  style="background: #9f9f9375;">Vegetables</h2>
+
+<br>
+<div class="row container">
+  <div *ngFor="let i of items$">
+
+
+
+    <div *ngIf="i.val().category === 'Vegetables'" class="card"
+      style="width:270px;;padding:15px;margin: 10px;text-align: center; ">
+      <img src={{i.val().imageUrl}} height="230px" class="card-img-top">
+      <div class="card-body">
+        <p class="card-title" style="font-size: 25px;"><strong>{{i.val().title}}</strong></p>
+        <p class="card-text"><span>₹</span>{{i.val().price}}
+        </p>
+
+        <button style="width: 100%" class="btn btn-outline-primary">Add to Cart</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr style="border-bottom: 2px solid black"><br>
+
+</div>
+<div style="right:20px;float:right!important; width: 15%;height:100%;;position: fixed;">
+  <div class="card" style="border:none;">
+    <div class="card-body">
+      <p class="card-title" style="font-size: 26px;border-bottom: 2px solid grey;">
+        Categories:
+      </p>
+      <p style="font-size:20px;" class="card-text">
+        <br>
+        <a href="#fruits">Fruits</a><br><br>
+        <a href="#bread">Bread</a><br><br>
+        <a href="#dairy">Diary</a><br><br>
+        <a href="#season">Seasoning & Spices</a><br><br>
+        <a href="#veges">Vegetables</a><br><br>
+
+      </p>
+    </div>
+  </div>
+
+</div>
+</div>
