@@ -11,10 +11,15 @@ import { ProductService } from '../product.service';
 export class HomeComponent implements OnInit {
   items$;
   constructor(private AfD: AngularFireDatabase, private productService: ProductService ) { }
+
+  addToCart(key) {
+    console.log('Added to Cart: ' + key );
+  }
+
   ngOnInit() {
     this.productService.getDetProd().subscribe(cat => {
       this.items$ = cat.map(item => {
-        console.log('key: ' + item.payload.key);    
+        console.log('key: ' + item.payload.key);
         // const l : number = length(item.payload.val());
 
         // console.log(this.list$.length);
@@ -23,4 +28,6 @@ export class HomeComponent implements OnInit {
       });
     });
   }
+
+
 }

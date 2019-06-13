@@ -16,7 +16,7 @@
         <p class="card-text"><span>₹</span>{{i.val().price}}
         </p>
 
-        <button style="width: 100%" class="btn btn-outline-primary">Add to Cart</button>
+        <button style="width: 100%;" (click)="addToCart(i.key)" class="btn btn-outline-primary">Add to Cart</button>
 
       </div>
     </div>
@@ -43,7 +43,7 @@
           <p class="card-text"><span>₹</span>{{i.val().price}}
           </p>
 
-          <button style="width: 100%" class="btn btn-outline-primary">Add to Cart</button>
+          <button style="width: 100%" (click)="addToCart(i.key)" class="btn btn-outline-primary">Add to Cart</button>
 
         </div>
       </div>
@@ -68,7 +68,8 @@
             <p class="card-text"><span>₹</span>{{i.val().price}}
             </p>
 
-            <button style="width: 100%" class="btn btn-outline-primary">Add to Cart</button>
+            <button style="width: 100%" (click)="addToCart(i.key)" class="btn btn-outline-primary">Add to
+              Cart</button>
 
           </div>
         </div>
@@ -93,7 +94,7 @@
         <p class="card-text"><span>₹</span>{{i.val().price}}
         </p>
 
-        <button style="width: 100%" class="btn btn-outline-primary">Add to Cart</button>
+        <button style="width: 100%" (click)="addToCart(i.key)" class="btn btn-outline-primary">Add to Cart</button>
 
       </div>
     </div>
@@ -118,7 +119,7 @@
         <p class="card-text"><span>₹</span>{{i.val().price}}
         </p>
 
-        <button style="width: 100%" class="btn btn-outline-primary">Add to Cart</button>
+        <button style="width: 100%" (click)="addToCart(i.key)" class="btn btn-outline-primary">Add to Cart</button>
 
       </div>
     </div>
